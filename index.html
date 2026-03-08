@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Howz ur day 🌸</title>
+<style>
+    body { 
+        font-family: Arial, sans-serif; 
+        text-align: center; 
+        background: #ffe4e1; 
+        color: #333; 
+        padding: 50px;
+    }
+    h1 { font-size: 2.5em; color: #ff69b4; }
+    button { 
+        padding: 15px 30px; 
+        font-size: 1.2em; 
+        background: #ffb6c1; 
+        border: none; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        margin: 10px;
+    }
+    button:hover { background: #ff69b4; color: white; }
+    p { font-size: 1.5em; margin-top: 20px; }
+</style>
+</head>
+<body>
+    <h1>Msupaa 🌸</h1>
+    <button onclick="getVibe()">Get Your Vibe 💛</button>
+    <p id="vibeText">Your vibe will appear here!</p>
+    <button onclick="sendVibe()">Send to Friend 💌</button>
+
+<script>
+const vibes = [
+    "Hey sunshine! 🌞 How’s your heart feeling today?",
+    "Hey friend! 💛 How’s your day treating you?",
+    "Hello lovely! 🌸 Any beautiful moments today?",
+    "Hi! 🌈 What made you smile today?",
+    "Hey you! 🫶 How’s your vibe today?"
+];
+
+let currentVibe = "";
+
+function getVibe() {
+    currentVibe = vibes[Math.floor(Math.random() * vibes.length)];
+    document.getElementById("vibeText").innerText = currentVibe;
+}
+
+function sendVibe() {
+    if(currentVibe === "") { getVibe(); }
+    const number = "254758760231"; // replace with your friend's number
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(currentVibe)}`;
+    window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
