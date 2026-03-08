@@ -50,7 +50,7 @@ function getVibe() {
 
 function sendVibe() {
     if(currentVibe === "") { getVibe(); }
-    const number = "254758760231"; // replace with your friend's number
+    const number = "2547xxxxxxxx"; // replace with your friend's number
     const url = `https://wa.me/${number}?text=${encodeURIComponent(currentVibe)}`;
     window.open(url, "_blank");
 }
